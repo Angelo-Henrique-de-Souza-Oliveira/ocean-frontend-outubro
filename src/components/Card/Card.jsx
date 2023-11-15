@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom"
 import Tag from "./Tags/Tag"
 
 export default function Card(props){
     const item=props.item
 
     const tags = item.tags || []
-    return  <div className="card">
+    return  <Link to={`/${item.id}`}><div className="card">
     <h2>{item.name}</h2>
     <div className='tags'>
       {tags.map(function(element){
@@ -13,4 +14,5 @@ export default function Card(props){
     </div>
     <img src={item.image} />
   </div>
+  </Link>
 }
